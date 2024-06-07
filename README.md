@@ -21,4 +21,4 @@ Yahas es una aplicación móvil desarrollada en Xamarin Forms para ayudar a pequ
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/Yahas.git
+git clone https://github.com/JohnDev-01/Yahas.git
