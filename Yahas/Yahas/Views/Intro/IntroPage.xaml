@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Intro.IntroPage"
+             BackgroundColor="#F0F0F0">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Center">
+                <Image Source="contabilidad.png"
+                       HeightRequest="150"
+                       WidthRequest="150"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       x:Name="ImagenIcono" />
+                <Label Text="Yahas Admin"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       FontSize="20" />
+            </StackLayout>
+            <StackLayout VerticalOptions="End"
+                         HorizontalOptions="Center">
+                <Label Text="F R O M "
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Italic"
+                       FontSize="16" />
+                <Label Text="JOHN KERLIN SILVESTRE"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       FontSize="17" 
+                       />
+            </StackLayout>
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

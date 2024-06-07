@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Login.CrearCuenta"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="Start"
+                             HeightRequest="54"
+                             Margin="10">
+                    <ImageButton Source="https://i.ibb.co/Hzxr3hF/hacia-atras.png"
+                                 BackgroundColor="Transparent"
+                                 x:Name="btnVolver"
+                                 Clicked="btnVolver_Clicked" />
+                    <Label Text="CREAR CUENTA"
+                           TextColor="#90CE43"
+                           FontAttributes="Bold"
+                           FontSize="22"
+                           VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="Center">
+                    <Image Source="https://i.ibb.co/Gnz6Rcj/camara.png"
+                           HeightRequest="200"
+                           x:Name="imgIcono" />
+                    <Button HorizontalOptions="End"
+                            Text="SUBIR IMAGEN"
+                            BackgroundColor="WhiteSmoke"
+                            TextColor="Black"
+                            CornerRadius="15"
+                            FontAttributes="Bold"
+                            x:Name="btnFoto"
+                            Clicked="btnFoto_Clicked" />
+                    <StackLayout WidthRequest="320"
+                                 HeightRequest="50"
+                                 Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/kMFtXqF/usuario-2.png"
+                               WidthRequest="40" />
+                        <Entry x:Name="txtNombre"
+                               Keyboard="Text"
+                               HorizontalOptions="FillAndExpand"
+                               ClearButtonVisibility="WhileEditing"
+                               Placeholder="Nombre Completo"
+                               PlaceholderColor="Gray"
+                               TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout WidthRequest="370"
+                                 HeightRequest="50"
+                                 Orientation="Horizontal"
+                                 Margin="10">
+                        <Image Source="https://i.ibb.co/mRvKSkV/correo-electronico.png"
+                               WidthRequest="40" />
+                        <Entry x:Name="txtCorreo"
+                               Keyboard="Email"
+                               HorizontalOptions="FillAndExpand"
+                               ClearButtonVisibility="WhileEditing"
+                               Placeholder="Correo Electronico"
+                               PlaceholderColor="Gray"
+                               TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout WidthRequest="370"
+                                 HeightRequest="50"
+                                 Orientation="Horizontal"
+                                 Margin="10">
+                        <Image Source="https://i.ibb.co/6yCyVG4/clave.png"
+                               WidthRequest="40" />
+                        <Entry x:Name="txtContra"
+                               IsPassword="True"
+                               HorizontalOptions="FillAndExpand"
+                               ClearButtonVisibility="WhileEditing"
+                               Placeholder="Contraseña"
+                               PlaceholderColor="Gray"
+                               TextColor="Black" />
+                    </StackLayout>
+                    <Button HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            BackgroundColor="#18893F"
+                            TextColor="White"
+                            Text="CREAR"
+                            WidthRequest="300"
+                            CornerRadius="15"
+                            Margin="0,50,0,0"
+                            x:Name="btnCrearCuenta"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Clicked="btnCrearCuenta_Clicked" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

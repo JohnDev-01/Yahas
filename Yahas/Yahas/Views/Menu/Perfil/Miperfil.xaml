@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Menu.Perfil.Miperfil"
+             BackgroundColor="White"
+             xmlns:circle ="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+            <Label Text="Mi Perfil"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"
+                   FontAttributes="Bold"
+                   FontSize="21"
+                   Margin="5"/>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand"
+                         Spacing="-90">
+                <circle:CircleImage Source="kardex.png"
+                                WidthRequest="150"
+                                HeightRequest="150"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Center"
+                                BorderColor="#18893F"
+                                BorderThickness="1.9"
+                                    x:Name="ImagenPerfil"
+                                    Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference ImagenPerfil}"
+                                   IsRunning="{Binding IsLoading}" />
+                <Button Text="Cambiar*"
+                        TextColor="Black"
+                        BackgroundColor="#E0E0E0"
+                        WidthRequest="83"
+                        HeightRequest="35"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        Margin="0,0,10,0"
+                        CornerRadius="10"
+                        FontSize="11" 
+                        x:Name="bnCambiarPerfil"
+                        Clicked="bnCambiarPerfil_Clicked"/>
+            </StackLayout>
+            
+            <Entry HorizontalOptions="FillAndExpand"
+                   FontSize="17"
+                   TextColor="Black"
+                   Placeholder="Escribe tu nombre"
+                   HorizontalTextAlignment="Center"
+                   x:Name="txtNombre"
+                   TextChanged="txtNombre_TextChanged"/>
+            <Button Text="Guardar"
+                    TextColor="White"
+                    BackgroundColor="#18893F"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    x:Name="btnGuardad"
+                    Clicked="btnGuardad_Clicked"/> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

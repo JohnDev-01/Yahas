@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Menu.Kardex.KardexPage"
+             BackgroundColor="#E7E7E7">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="60,*">
+                <Grid Grid.Row="0"
+                      RowDefinitions="40"
+                      BackgroundColor="#E7E7E7">
+                    <StackLayout Orientation="Horizontal"
+                                 Grid.Row="0"
+                                 HorizontalOptions="FillAndExpand">
+                        <Image Source="https://i.ibb.co/FmX0H2f/arriba-y-abajo.png"
+                               HorizontalOptions="Start"
+                               Margin="5,5,0,0" />
+                        <Label HorizontalOptions="Start"
+                               Text="Kardex"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="19"
+                               Margin="5,5,0,0"
+                               VerticalTextAlignment="Center" />
+                    </StackLayout>
+                </Grid>
+                <BoxView  Grid.Row="1"
+                          BackgroundColor="White"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand"
+                          CornerRadius="50,50,0,0"></BoxView>
+                <Grid Grid.Row="1"
+                      RowDefinitions="50,50,50,50,50,50,80,*"
+                      Margin="10">
+                    <StackLayout Grid.Row="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label Text="Tipo De Kardex:"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               VerticalTextAlignment="Center" />
+                        
+                        <RadioButton Content="Entrada"
+                                     TextColor="Black"
+                                     x:Name="rbEntrada"
+                                     CheckedChanged="rbEntrada_CheckedChanged"/>
+                        <RadioButton Content="Salida"
+                                     TextColor="Black" 
+                                     x:Name="rbSalida"
+                                     CheckedChanged="rbSalida_CheckedChanged"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label Text="Categoria..........:"
+                               TextColor="Black"
+                               FontAttributes="Italic"
+                               FontSize="16"
+                               VerticalTextAlignment="Center" />
+                        <Picker WidthRequest="200"
+                                x:Name="pickerCategorias"
+                                SelectedIndexChanged="pickerCategorias_SelectedIndexChanged"/> 
+                    </StackLayout>
+                    <StackLayout Grid.Row="2"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label Text="Fecha.................:"
+                               TextColor="Black"
+                               FontAttributes="Italic"
+                               FontSize="16"
+                               VerticalTextAlignment="Center" />
+                        <DatePicker WidthRequest="200"
+                                    Format="dd/MM/yyyy"
+                                    x:Name="datepickerFecha"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label Text="Precio Compra:"
+                               TextColor="Black"
+                               FontAttributes="Italic"
+                               FontSize="16"
+                               VerticalTextAlignment="Center" />
+                        <Entry WidthRequest="200"
+                               x:Name="txtPrecioCompra"
+                               Keyboard="Numeric"
+                               Placeholder="Precio de compra"
+                               FontSize="16" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="4"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label Text="Precio de Venta:"
+                               TextColor="Black"
+                               FontAttributes="Italic"
+                               FontSize="16"
+                               VerticalTextAlignment="Center" />
+                        <Entry WidthRequest="200"
+                               x:Name="txtPrecioVenta"
+                               Keyboard="Numeric"
+                               Placeholder="Precio de Venta"
+                               FontSize="16" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="5"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Label Text="Cantidad...........:"
+                               TextColor="Black"
+                               FontAttributes="Italic"
+                               FontSize="16"
+                               VerticalTextAlignment="Center" />
+                        <Entry WidthRequest="200"
+                                x:Name="txtCantidad" 
+                               Keyboard="Numeric"
+                               Placeholder="Digita una cantidad"
+                               FontSize="16"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="6"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Button Text="Guardar"
+                                FontAttributes="Bold"
+                                BackgroundColor="#18893F"
+                                TextColor="White"
+                                CornerRadius="14"
+                                WidthRequest="100"
+                                Margin="0,5,0,0"
+                                x:Name="btnGuardar"
+                                Clicked="btnGuardar_Clicked"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="7"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 Spacing="-10">
+                        <Label Text="Ver Historial"
+                               TextColor="#18893F"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               VerticalTextAlignment="Center"
+                               x:Name="lblVerHistorial">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnHistorial_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <ImageButton Source="https://i.ibb.co/dsTm39C/volver-derecha.png"
+                                  VerticalOptions="Center"
+                                     BackgroundColor="Transparent"
+                                CornerRadius="14"
+                                WidthRequest="50"
+                                Margin="0,5,0,0"
+                                     x:Name="btnHistorial"
+                                     Clicked="btnHistorial_Clicked"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

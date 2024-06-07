@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Menu.Categorias.AdministrarCategorias"
+             Title="Categorias">
+    <ContentPage.Content>
+        <StackLayout >
+            <Entry Placeholder="Escribe el nombre la categoria del producto..."
+                   x:Name="txtCategoria"
+                   />
+            <Button Text="Guardar"
+                    x:Name="btnEditar"
+                    Clicked="btnEditar_Clicked"
+                    BackgroundColor="#18893F"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    WidthRequest="100"
+                    HeightRequest="60"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"/> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

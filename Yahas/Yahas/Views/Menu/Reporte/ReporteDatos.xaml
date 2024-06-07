@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Menu.Reporte.ReporteDatos"
+             xmlns:ImageCircle ="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="50,130,*">
+                <StackLayout Grid.Row="0"
+                             Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="Start"
+                                 VerticalOptions="Center"
+                                 Spacing="0">
+                        <Label Text="Hola, John Kerlin Silvetre"
+                           TextColor="#4A4A4A"
+                            x:Name="lblNombre"
+                           FontAttributes="Bold"
+                           FontSize="17"
+                           Margin="8,0,0,0"/>
+                        <Label Text="Resumen de tus productos"
+                               TextColor="#4A4A4A"
+                               FontSize="14"
+                               Margin="8,0,0,0" />
+                    </StackLayout>
+                    
+                    <ImageCircle:CircleImage x:Name="ImagenIcono"
+                                             BorderThickness="1"
+                                             BorderColor="#18893F"
+                                             Aspect="Fill"
+                                             Source="contabilidad.png"
+                                             HorizontalOptions="EndAndExpand"
+                                             VerticalOptions="Center" 
+                                             WidthRequest="50"
+                                             HeightRequest="100"
+                                             Margin="0,5,5,0"/>
+                </StackLayout>
+                <Frame Grid.Row="1"
+                       BackgroundColor="#E7E7E7"
+                       Margin="8"
+                       CornerRadius="10"
+                       Padding="0"
+                       >
+                    <Grid RowDefinitions="*,*,*"
+                          RowSpacing="0">
+                        
+                        <StackLayout Grid.Row="0"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     Orientation="Horizontal">
+                            <Label Text="Desde.....:"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"
+                                   FontSize="17"
+                                   TextColor="Black "/>
+                            <DatePicker x:Name="dateFi"
+                                        Format="dd/MM/yyyy"
+                                        WidthRequest="200"
+                                        TextColor="#8B8B8B"
+                                        FontSize="17"
+                                        DateSelected="dateFi_DateSelected"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                                     Orientation="Horizontal">
+                            <Label Text="Hasta......:"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"
+                                   FontSize="17"
+                                   TextColor="Black" />
+                            <DatePicker x:Name="dateFf"
+                                        Format="dd/MM/yyyy"
+                                        WidthRequest="200"
+                                        TextColor="#8B8B8B"
+                                        FontSize="17"
+                                        DateSelected="dateFf_DateSelected"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     Orientation="Horizontal">
+                            <Label Text="Categoria:"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"
+                                   FontSize="17"
+                                   TextColor="Black" />
+                            <Picker WidthRequest="200"
+                                    TextColor="#8B8B8B"
+                                    FontSize="17"
+                                    x:Name="pickerCategorias"
+                                    SelectedIndexChanged="pickerCategorias_SelectedIndexChanged"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <CollectionView x:Name="collectionReport" Grid.Row="2"
+                                Margin="5">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Span="2"
+                                         HorizontalItemSpacing="10"
+                                         VerticalItemSpacing="15"
+                                         Orientation="Vertical"
+                                         />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate >
+                            <Frame Padding="0"
+                                   CornerRadius="10"
+                                   HeightRequest="200">
+                                <Frame.Background>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                                         EndPoint="1,0">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#1A8827"
+                                                          Offset="0.1" />
+                                            <GradientStop Color="#1E0975"
+                                                          Offset="1.0" />
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <Grid RowDefinitions="100,*,30"
+                                      Margin="5">
+                                    <Image Source="{Binding Icono}"
+                                           Grid.Row="0"/>
+                                    <Label Text="{Binding Nombre}"
+                                           FontAttributes="Bold"
+                                           Grid.Row="1"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="17"
+                                           VerticalOptions="Center"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding Monto}"
+                                           FontAttributes="Bold"
+                                           Grid.Row="2"
+                                           TextColor="#E2E2E2"
+                                           HorizontalOptions="FillAndExpand"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="17"
+                                           />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:Categorias="clr-namespace:Yahas.Views.Menu.Categorias"
+            xmlns:Kardex="clr-namespace:Yahas.Views.Menu.Kardex"
+            xmlns:reporte="clr-namespace:Yahas.Views.Menu.Reporte"
+            xmlns:perfil="clr-namespace:Yahas.Views.Menu.Perfil"
+            xmlns:Egresos="clr-namespace:Yahas.Views.Menu.Egresos"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="Yahas.Views.Menu.Contenedor"
+            BarTextColor="#18893F"
+            BarBackgroundColor="#E7E7E7"
+            SelectedTabColor="#18893F"
+            UnselectedTabColor="#18893F"
+            NavigationPage.HasNavigationBar="False">
+    <!--Pages can be added as references or inline-->
+    <reporte:ReporteDatos Title="Reportes"
+                          IconImageSource="reportes.png" />
+    
+    <Kardex:KardexPage Title="Kardex"
+                       IconImageSource="kardex.png" />
+    <Egresos:EgresosPage Title="Egresos"
+                         IconImageSource="egresos.png" />
+    <Categorias:CategoriasPagina Title="Categorias"
+                                 IconImageSource="categorias.png" />
+    <perfil:Miperfil Title="Mi Perfil"
+                     IconImageSource="users.png" />
+</TabbedPage>

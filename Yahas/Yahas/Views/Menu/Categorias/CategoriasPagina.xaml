@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Menu.Categorias.CategoriasPagina">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Start"
+                         HorizontalOptions="FillAndExpand"
+                         HeightRequest="60">
+                <Label Text="Categorias"
+                       TextColor="Black"
+                       FontSize="22"
+                       FontAttributes="Italic"
+                       Margin="5"
+                       HorizontalOptions="Start"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="Center"/>
+                <Button HorizontalOptions="EndAndExpand"
+                        Text="+"
+                        TextColor="White"
+                        BackgroundColor="#18893F"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        Margin="5"
+                        CornerRadius="10"
+                        WidthRequest="50"
+                        x:Name="btnAgregar"
+                        Clicked="btnAgregar_Clicked"/> 
+            </StackLayout>
+            <CollectionView VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="collectionCategorias"
+                            Margin="5">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     HorizontalItemSpacing="5"
+                                     VerticalItemSpacing="5"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#E7E7E7"
+                               HeightRequest="170"
+                               WidthRequest="100"
+                               Margin="10"
+                               CornerRadius="14"
+                               Padding="0">
+                            <Grid RowDefinitions="60,*,*,40"
+                                  Margin="5">
+                                <Image Source="https://i.ibb.co/GQsNTGP/estar-2.png"
+                                       
+                                       Grid.Row="0"/>
+                                <Label Grid.Row="1"
+                                       Text="{Binding Nombre}"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       FontSize="16"
+                                       HorizontalOptions="FillAndExpand"
+                                       HorizontalTextAlignment="Center"/>
+                                <Label Grid.Row="2"
+                                       Text="{Binding Stock}"
+                                       FontAttributes="Bold"
+                                       TextColor="#787878"
+                                       FontSize="16"
+                                       HorizontalOptions="FillAndExpand"
+                                       HorizontalTextAlignment="Center" />
+                                <ImageButton Grid.Row="3"
+                                             Source="https://i.ibb.co/SKb5Ryx/lapiz-4.png"
+                                             BackgroundColor="Transparent"
+                                             x:Name="btnEditar"
+                                             CommandParameter="{Binding Idcategorias}"
+                                             Clicked="btnEditar_Clicked"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

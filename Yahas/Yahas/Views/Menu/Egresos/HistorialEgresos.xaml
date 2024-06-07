@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yahas.Views.Menu.Egresos.HistorialEgresos">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout VerticalOptions="Start"
+                             HorizontalOptions="Center"
+                             Orientation="Horizontal">
+                    <Label Text="Desde:"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="21" />
+                    <DatePicker x:Name="dateFi"
+                                Format="dd/MM/yyyy"
+                                WidthRequest="200"
+                                DateSelected="dateFi_DateSelected" />
+                </StackLayout>
+                <StackLayout VerticalOptions="Start"
+                             HorizontalOptions="Center"
+                             Orientation="Horizontal">
+                    <Label Text="Hasta:"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="21" />
+                    <DatePicker x:Name="dateFf"
+                                Format="dd/MM/yyyy"
+                                WidthRequest="200"
+                                DateSelected="dateFf_DateSelected" />
+                </StackLayout>
+                <StackLayout VerticalOptions="Start"
+                             HorizontalOptions="Center"
+                             Orientation="Horizontal">
+                    <Label Text="Categoria:"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="21" />
+                    <Picker WidthRequest="200"
+                            x:Name="pickerCategorias"
+                            SelectedIndexChanged="pickerCategorias_SelectedIndexChanged" />
+                </StackLayout>
+                <CollectionView x:Name="collectionRegistros">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Span="1"
+                                         Orientation="Vertical"
+                                         VerticalItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="#E7E7E7"
+                                   CornerRadius="10"
+                                   HeightRequest="80"
+                                   Padding="0">
+                                <Grid ColumnDefinitions="4,*">
+                                    <BoxView Grid.Column="0"
+                                             BackgroundColor="{Binding Color}"
+                                             VerticalOptions="FillAndExpand"
+                                             HorizontalOptions="FillAndExpand" />
+                                    <Grid RowDefinitions="30,*"
+                                          Grid.Column="1">
+                                        <Frame Grid.Row="0"
+                                               WidthRequest="100"
+                                               HorizontalOptions="Start"
+                                               Padding="0"
+                                               Margin="5,5,0,0"
+                                               CornerRadius="7">
+                                            <Label Text="{Binding Fecha}"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center" />
+                                        </Frame>
+                                        <Label Grid.Row="0"
+                                               Text="{Binding Monto}"
+                                               
+                                               HorizontalOptions="End"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalOptions="Center"
+                                               Margin="0,5,15,0"
+                                               FontAttributes="Bold"
+                                               FontSize="19"
+                                               TextColor="Red" />
+                                        <Label Grid.Row="1"
+                                               Text="{Binding Concepto}"
+                                               TextColor="Black"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Start"
+                                               Margin="10,5,0,0"
+                                               FontAttributes="Bold"
+                                               FontSize="17" />
+                                        <ImageButton Grid.Row="1"
+                                                     WidthRequest="50"
+                                                     Source="https://i.ibb.co/ys5M7x5/eliminar-1.png"
+                                                     HorizontalOptions="End"
+                                                     BackgroundColor="Transparent"
+                                                     Margin="0,0,5,10"
+                                                     CommandParameter="{Binding IdEgreso}"
+                                                     x:Name="btnEliminar"
+                                                     Clicked="btnEliminar_Clicked"/>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
